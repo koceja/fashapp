@@ -33,7 +33,6 @@
       }
 
       .card {
-          height: 70%;
         box-shadow: 3px 3px 8px #888888;
       }
       .card-body {
@@ -43,7 +42,7 @@
           margin-bottom: 1.25rem;
       }
     </style>
-    <!-- <script src="/static/fadeIn.js"> -->
+    <script src="/static/fadeIn.js">
     </script>
     <script>
         
@@ -51,12 +50,28 @@
   </head>
   <body>
       <div id="header">
-          <h1>fashapp</h1>
+          <h1><a href="/">fashapp</a></h1>
       </div>
-    <div class="row row-cols-2" style="margin: auto">
-        <div class='col mb-4'><div class='card h-100'><a href="/men"><img src="/static/mens.jpg" class='card-img-top' alt='...' /></a></div></div>
-        <div class='col mb-4'><div class='card h-100'><a href="/women"><img src="/static/womens.jpg" class='card-img-top' alt='...' /></a></div></div>
-
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" style="margin: auto">
     </div>
+
+    <script>
+        
+    </script>
+    <script src="/static/loadMenCard.js">
+        
+
+    </script>
+
+    <script>
+//         $.ajax({
+//   type: "POST",
+//   url: url,
+//   data: data,
+//   success: success,
+//   dataType: dataType
+// });
+    </script>
+
   </body>
 </html>

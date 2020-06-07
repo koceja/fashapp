@@ -21,7 +21,19 @@ func main() {
 	router.Static("/static", "static")
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "view.tmpl.html", nil)
+		c.HTML(http.StatusOK, "index.tmpl.html", nil)
+	})
+
+	router.GET("/men", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "men.tmpl.html", nil)
+	})
+
+	router.GET("/women", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "women.tmpl.html", nil)
+	})
+
+	router.GET("/both", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "both.tmpl.html", nil)
 	})
 
 	router.Run(":" + port)
