@@ -209,10 +209,6 @@ var womenJson = {
 	  "url": "https://www.amazon.com/b/?node=19277531011&ref=slsr_d_b_m_vn_4&wi=4&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/cml_m.jpg",
-	  "url": "https://www.amazon.com/b/?node=19781749011&ref=slsr_d_b_m_vn_5&wi=5&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/ourbrands.jpg",
 	  "url": "https://www.amazon.com/b?node=16334314011&ref=slsr_d_b_m_vn_6&wi=6&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
 	 },
@@ -457,10 +453,6 @@ var womenJson = {
 	  "url": "https://www.amazon.com/Yidarton-Womens-Casual-Sleeve-Knotted/dp/B07J55HJ2L/ref=sr_1_108?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-108"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/I/91yIf5FxWpL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Smart-Womans-Guide-Style-Clothing-ebook/dp/B01IE35OJ6/ref=sr_1_109?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-109"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/I/51ZXhfJFwdL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Amazon-Essentials-Womens-Wireless-Support/dp/B07HZ2Z7ZJ/ref=sr_1_110?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-110"
 	 },
@@ -559,10 +551,6 @@ var womenJson = {
 	 {
 	  "image": "https://m.media-amazon.com/images/I/717TavpFNdL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Amazon-Essentials-Womens-Studio-Jumpsuit/dp/B07YLTXY4J/ref=sr_1_134?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-134"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/I/514ep4n2kLL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Afro-Punk-24-7-Spys/dp/B075L842X6/ref=sr_1_135?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-135"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/81mXrDAGY0L._AC_UL320_.jpg",
@@ -783,10 +771,6 @@ var womenJson = {
 	 {
 	  "image": "https://m.media-amazon.com/images/I/71wCkMkm4tL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/YESNO-Casual-Bohemian-Spaghetti-E75-CR30M/dp/B07PWZRJG5/ref=sr_1_190?dchild=1&keywords=women%27s+clothing&qid=1591562861&sr=8-190"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/I/91QqFA7bTQL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Sucker-Punch-Emily-Browning/dp/B00ASIT208/ref=sr_1_191?dchild=1&keywords=women%27s+clothing&qid=1591562861&sr=8-191"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/61sHGolNhGL._AC_UL320_.jpg",

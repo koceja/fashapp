@@ -225,14 +225,6 @@ var menJson = {
 	  "url": "https://www.amazon.com/MOERDENG-Waterproof-Mountain-Windbreaker-Raincoat/dp/B07W3PHZHN/ref=sr_1_48?dchild=1&keywords=men%27s+clothing&qid=1591563532&sr=8-48"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/vogue.jpg",
-	  "url": "https://www.amazon.com/b/?node=21150111011&ref=slsr_d_b_m_vn_1&wi=1&pd_rd_w=q4HuE&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=8PXED2TVNGP38J9J4KBD&pd_rd_r=02e8a9cf-530e-48a8-80a2-5b9e5696834a&pd_rd_wg=Kcnsu&qid=1591563532"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/new.jpg",
-	  "url": "https://www.amazon.com/b/?node=17020138011&ref=slsr_d_b_m_vn_2&wi=2&pd_rd_w=q4HuE&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=8PXED2TVNGP38J9J4KBD&pd_rd_r=02e8a9cf-530e-48a8-80a2-5b9e5696834a&pd_rd_wg=Kcnsu&qid=1591563532"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/cml_w.jpg",
 	  "url": "https://www.amazon.com/b/?node=19277531011&ref=slsr_d_b_m_vn_4&wi=4&pd_rd_w=q4HuE&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=8PXED2TVNGP38J9J4KBD&pd_rd_r=02e8a9cf-530e-48a8-80a2-5b9e5696834a&pd_rd_wg=Kcnsu&qid=1591563532"
 	 },
@@ -969,20 +961,12 @@ var menJson = {
 	  "url": "https://www.amazon.com/Funny-Guy-Mugs-Gnarly-Windbreaker/dp/B073R1BWP9/ref=sr_1_234?dchild=1&keywords=men%27s+clothing&qid=1591563568&sr=8-234"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/I/71FG+wwVNiL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/American-Apparel-Jersey-Short-Sleeve/dp/B00DS208EA/ref=sr_1_235?dchild=1&keywords=men%27s+clothing&qid=1591563568&sr=8-235"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/I/61iH3NmVpzL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Club-Ride-Apparel-Biking-Shirt/dp/B07WTXH95G/ref=sr_1_236?dchild=1&keywords=men%27s+clothing&qid=1591563568&sr=8-236"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/618raGhXhjL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Raider-Pullover-Holloway-Sportswear-Carbon/dp/B0747JM5JH/ref=sr_1_237?dchild=1&keywords=men%27s+clothing&qid=1591563568&sr=8-237"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/I/A1ciYH8INIL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Notebook-Ryan-Gosling/dp/B003DBOS7Y/ref=sr_1_238?dchild=1&keywords=men%27s+clothing&qid=1591563568&sr=8-238"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/81bVePFUyzL._AC_UL320_.jpg",
@@ -1458,18 +1442,6 @@ var womenJson = {
 	  "url": "https://www.amazon.com/b/?node=19624159011&ref=slsr_d_b_m_vn_3&wi=3&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/cml_w.jpg",
-	  "url": "https://www.amazon.com/b/?node=19277531011&ref=slsr_d_b_m_vn_4&wi=4&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/cml_m.jpg",
-	  "url": "https://www.amazon.com/b/?node=19781749011&ref=slsr_d_b_m_vn_5&wi=5&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/shopbop.jpg",
-	  "url": "https://www.amazon.com/stores/page/135F2992-CF34-468F-B67F-101F73A197E3/?ref=slsr_d_b_m_vn_7&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/G/01/softlines/sobe/explore/salesdeals.jpg",
 	  "url": "https://www.amazon.com/b/?node=9538491011&ref=slsr_d_b_m_vn_8&wi=8&pd_rd_w=rygwL&pf_rd_p=1b9b5a2b-08b8-465f-907c-b3bf866bdd7b&pf_rd_r=QA8VKWSJZCPCZYVV5EFN&pd_rd_r=097178db-1494-45a5-aeea-d271fcbcf850&pd_rd_wg=WBvYw&qid=1591562838"
 	 },
@@ -1706,10 +1678,6 @@ var womenJson = {
 	  "url": "https://www.amazon.com/Yidarton-Womens-Casual-Sleeve-Knotted/dp/B07J55HJ2L/ref=sr_1_108?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-108"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/I/91yIf5FxWpL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Smart-Womans-Guide-Style-Clothing-ebook/dp/B01IE35OJ6/ref=sr_1_109?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-109"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/I/51ZXhfJFwdL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Amazon-Essentials-Womens-Wireless-Support/dp/B07HZ2Z7ZJ/ref=sr_1_110?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-110"
 	 },
@@ -1808,10 +1776,6 @@ var womenJson = {
 	 {
 	  "image": "https://m.media-amazon.com/images/I/717TavpFNdL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Amazon-Essentials-Womens-Studio-Jumpsuit/dp/B07YLTXY4J/ref=sr_1_134?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-134"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/I/514ep4n2kLL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Afro-Punk-24-7-Spys/dp/B075L842X6/ref=sr_1_135?dchild=1&keywords=women%27s+clothing&qid=1591562849&sr=8-135"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/81mXrDAGY0L._AC_UL320_.jpg",
@@ -2032,10 +1996,6 @@ var womenJson = {
 	 {
 	  "image": "https://m.media-amazon.com/images/I/71wCkMkm4tL._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/YESNO-Casual-Bohemian-Spaghetti-E75-CR30M/dp/B07PWZRJG5/ref=sr_1_190?dchild=1&keywords=women%27s+clothing&qid=1591562861&sr=8-190"
-	 },
-	 {
-	  "image": "https://m.media-amazon.com/images/I/91QqFA7bTQL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Sucker-Punch-Emily-Browning/dp/B00ASIT208/ref=sr_1_191?dchild=1&keywords=women%27s+clothing&qid=1591562861&sr=8-191"
 	 },
 	 {
 	  "image": "https://m.media-amazon.com/images/I/61sHGolNhGL._AC_UL320_.jpg",
