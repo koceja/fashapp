@@ -18,7 +18,10 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       body {
@@ -27,7 +30,7 @@
       }
 
       #header {
-        font-family: 'Sriracha', cursive;
+        font-family: "Sriracha", cursive;
         text-align: center;
         margin-bottom: 5%;
       }
@@ -36,42 +39,56 @@
         box-shadow: 3px 3px 8px #888888;
       }
       .card-body {
-          text-align: center;
-          margin: auto;
-          height: 20px;
-          margin-bottom: 1.25rem;
+        text-align: center;
+        margin: auto;
+        height: 20px;
+        margin-bottom: 1.25rem;
+      }
+
+      a:hover {
+        color: gray;
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
       }
     </style>
-    <script src="/static/fadeIn.js">
-    </script>
-    <script>
-        
-    </script>
+    <script src="/static/fadeIn.js"></script>
+    <script></script>
   </head>
   <body>
-      <div id="header">
-          <h1><a href="/">fashapp</a></h1>
-      </div>
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" style="margin: auto">
+    <div id="header">
+      <h1><a href="/">fashapp</a></h1>
+      <ul>
+        <li class="navLink" style="display:inline-block;  padding: 20px">
+            <a href="/men" style="text-decoration:none;"><h3>men's</h3></a>
+        </li>
+        <li class="navLink" style="display:inline-block;  padding: 20px">
+            <a href="/both" style="text-decoration:none;"><h3>both</h3></a>
+        </li>
+        <li class="navLink" style="display:inline-block;  padding: 20px">
+            <a href="/women" style="text-decoration:none;"><h3>women's</h3></a>
+        </li>
+    </ul>
     </div>
+    <div
+      class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6"
+      style="margin: auto;"
+    ></div>
+
+    <script src="/static/animateLink.js"></script>
+    <script src="/static/loadMenCard.js"></script>
 
     <script>
-        
+      //         $.ajax({
+      //   type: "POST",
+      //   url: url,
+      //   data: data,
+      //   success: success,
+      //   dataType: dataType
+      // });
     </script>
-    <script src="/static/loadMenCard.js">
-        
-
-    </script>
-
-    <script>
-//         $.ajax({
-//   type: "POST",
-//   url: url,
-//   data: data,
-//   success: success,
-//   dataType: dataType
-// });
-    </script>
-
   </body>
 </html>

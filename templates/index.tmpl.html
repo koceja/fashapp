@@ -32,6 +32,11 @@
         margin-bottom: 5%;
       }
 
+      #both {
+          background-color: black !important;
+          color: white !important;
+      }
+
       .card {
           height: 70%;
         box-shadow: 3px 3px 8px #888888;
@@ -42,8 +47,23 @@
           height: 20px;
           margin-bottom: 1.25rem;
       }
+
+      a:hover {
+        color: gray;
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #footer {
+          text-align: center;
+      }
+
     </style>
-    <!-- <script src="/static/fadeIn.js"> -->
+    <script src="/static/fadeIn.js">
     </script>
     <script>
         
@@ -53,10 +73,19 @@
       <div id="header">
           <h1>fashapp</h1>
       </div>
-    <div class="row row-cols-2" style="margin: auto">
+    <div class="row row-cols-1 row-cols-sm-3" style="margin: 0px">
         <div class='col mb-4'><div class='card h-100'><a href="/men"><img src="/static/mens.jpg" class='card-img-top' alt='...' /></a></div></div>
+        <div class='col mb-4'><div class='card h-100'><a href="/both"><img src="/static/both.jpg" class='card-img-top' alt='...' /></a></div></div>
         <div class='col mb-4'><div class='card h-100'><a href="/women"><img src="/static/womens.jpg" class='card-img-top' alt='...' /></a></div></div>
 
     </div>
+    <div id="footer">
+        <hr>
+        <div>
+            <p>fashapp 2020. <a href="mailto:dkoceja@live.unc.edu">Contact us</a></p>
+        </div>
+    </div>
+    <script src="/static/animateCard.js">
+    </script>
   </body>
 </html>
