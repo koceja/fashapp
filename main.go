@@ -1,29 +1,44 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
-	"os"
-
-	"github.com/gin-gonic/gin"
-	_ "github.com/heroku/x/hmetrics/onload"
+	"html/template"
 )
 
-func main() {
-	port := os.Getenv("PORT")
 
-	if port == "" {
-		log.Fatal("$PORT must be set")
+var templates = template.Must(template.ParseFiles("./templates/view.html"))
+
+func renderTemplate(w http.ResponseWriter, tmpl string) {
+	err := templates.Execute(w, tmpl+".html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
+}
 
-	router := gin.New()
-	router.Use(gin.Logger())
-	router.LoadHTMLGlob("templates/*.tmpl.html")
-	router.Static("/static", "static")
+func makeHandler(fn func (http.ResponseWriter, *http.Request, string)) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+        fn(w, r, r.URL.Path)
+	}
+}
 
-	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl.html", nil)
-	})
 
-	router.Run(":" + port)
+func indexHandler(w http.ResponseWriter, r *http.Request, title string) {
+	switch r.Method {
+	case "GET":
+		renderTemplate(w, "view")
+	default:
+		
+	} 
+	
+}
+
+
+func main() {
+	
+	fmt.Println("Server starting...")
+
+	http.HandleFunc("/", makeHandler(indexHandler))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }

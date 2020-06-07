@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 5% !important;
+        background-color: #f1f1f1;
+      }
+
+      #header {
+        font-family: 'Sriracha', cursive;
+        text-align: center;
+        margin-bottom: 5%;
+      }
+
+      .card {
+        box-shadow: 3px 3px 8px #888888;
+      }
+      .card-body {
+          text-align: center;
+          margin: auto;
+          height: 20px;
+          margin-bottom: 1.25rem;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        /*! Fades in page on load */
+        $("body").css("display", "none");
+        $("body").fadeIn(1000);
+      });
+    </script>
+    <script>
+        
+    </script>
+  </head>
+  <body>
+      <div id="header">
+          <h1>fashapp</h1>
+      </div>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6" style="margin: auto">
+    </div>
+
+    <script>
+        var images = [
+	'https://m.media-amazon.com/images/I/71D9ljAwRLL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/71SOWu25AtL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/61Xz4E+Kp0L._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81iiLBqVkdL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81rMweUpVoL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81urAB+9qwL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/51z17bjs+KL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/518wdUguROL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/71dwaaVqzWL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/71m8F-BxjpL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81R32Du+dsL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81CJQ+eXoeL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/719k7ivfgOL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/81oz9owYoHL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/61d02VIrAGL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/61tOF0F0ryL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/71GKlkGwhwL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/51Hdpd4YNqL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/61CNc6KusOL._AC_UL320_.jpg',
+	'https://m.media-amazon.com/images/I/91Lgd-4F1cL._AC_UL320_.jpg',
+];
+
+        if ($(document).height() < 2000) {
+            var i;
+                for (i = 0; i < 16; i++) {
+                    const url = images[Math.floor(Math.random() * images.length)];
+
+                    $("<div class='col mb-4'><div class='card h-100'><img src='" + url + "' class='card-img-top' alt='...' /><div class='card-body'>          <a href='#' class='card-link'>Like</a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+
+                }
+        }
+        $(window).scroll(function() {
+            console.log($(window).scrollTop());
+            console.log($(document).height() - $(window).height());
+            if($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+                var i;
+                for (i = 0; i < 8; i++) {
+                    const url = images[Math.floor(Math.random() * images.length)];
+
+                    $("<div class='col mb-4'><div class='card h-100'><img src='" + url + "' class='card-img-top' alt='...' /><div class='card-body'>          <a href='#' class='card-link'>Like</a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+
+                }
+   }
+});
+    </script>
+    <script>
+        
+
+    </script>
+
+    <script>
+//         $.ajax({
+//   type: "POST",
+//   url: url,
+//   data: data,
+//   success: success,
+//   dataType: dataType
+// });
+    </script>
+
+  </body>
+</html>
