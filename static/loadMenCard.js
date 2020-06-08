@@ -1544,7 +1544,7 @@ if ($(document).height() < 2000) {
         url +
         "'><img src='" +
         img +
-        "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>"
+        "' class='card-img-top' alt='...' /></a><div class='card-body'>          <div class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></div>        </div>      </div></div>"
     )
       .hide()
       .appendTo(".row")
@@ -1564,7 +1564,7 @@ $(window).scroll(function () {
           url +
           "'><img src='" +
           img +
-          "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>"
+          "' class='card-img-top' alt='...' /></a><div class='card-body'>          <div class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></div>        </div>      </div></div>"
       )
         .hide()
         .appendTo(".row")

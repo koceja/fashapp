@@ -1229,13 +1229,11 @@ var womenJson = {
 						   url = women[index]["url"];
 						   img = women[index]["image"];
 				
-					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <div class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></div>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
 				   }
 		   }
 		   $(window).scroll(function() {
-			   console.log($(window).scrollTop());
-			   console.log($(document).height() - $(window).height());
 			   if($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
 				   var i;
 				   for (i = 0; i < 6; i++) {
@@ -1244,7 +1242,7 @@ var womenJson = {
 						   url = women[index]["url"];
 						   img = women[index]["image"];
 					
-					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <div class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></div>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
 				   }
 	  }

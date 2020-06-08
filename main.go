@@ -8,6 +8,10 @@ import (
 	_ "github.com/heroku/x/hmetrics/onload"
 )
 
+func getImage(c *gin.Context) {
+
+}
+
 func main() {
 	port := os.Getenv("PORT")
 
@@ -35,6 +39,13 @@ func main() {
 	router.GET("/both/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "both.tmpl.html", nil)
 	})
+
+	router.POST("/men/", getImage)
+
+	router.POST("/women/", getImage)
+
+	router.POST("/both/", getImage)
+
 
 	router.Run(":" + port)
 }
