@@ -1537,8 +1537,8 @@ if ($(document).height() < 2000) {
   for (i = 0; i < 12; i++) {
     var url, img;
     var index = Math.floor(Math.random() * men.length);
-    url = men[Math.floor(Math.random() * men.length)]["url"];
-    img = men[Math.floor(Math.random() * men.length)]["image"];
+    url = men[index]["url"];
+    img = men[index]["image"];
     $(
       "<div class='col mb-4'><div class='card h-100'><a href='" +
         url +
@@ -1552,15 +1552,13 @@ if ($(document).height() < 2000) {
   }
 }
 $(window).scroll(function () {
-  console.log($(window).scrollTop());
-  console.log($(document).height() - $(window).height());
   if ($(window).scrollTop() > $(document).height() - $(window).height() - 50) {
     var i;
     for (i = 0; i < 6; i++) {
       var url, img;
         var index = Math.floor(Math.random() * men.length);
-        url = men[Math.floor(Math.random() * men.length)]["url"];
-        img = men[Math.floor(Math.random() * men.length)]["image"];
+        url = men[index]["url"];
+        img = men[index]["image"];
       $(
         "<div class='col mb-4'><div class='card h-100'><a href='" +
           url +

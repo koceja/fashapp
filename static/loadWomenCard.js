@@ -1226,8 +1226,8 @@ var womenJson = {
 				   for (i = 0; i < 12; i++) {
 					   var url, img;
 						   var index = Math.floor(Math.random() * women.length)
-						   url = women[Math.floor(Math.random() * women.length)]["url"];
-						   img = women[Math.floor(Math.random() * women.length)]["image"];
+						   url = women[index]["url"];
+						   img = women[index]["image"];
 				
 					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
@@ -1241,8 +1241,8 @@ var womenJson = {
 				   for (i = 0; i < 6; i++) {
 					   var url, img;
 						   var index = Math.floor(Math.random() * women.length)
-						   url = women[Math.floor(Math.random() * women.length)]["url"];
-						   img = women[Math.floor(Math.random() * women.length)]["image"];
+						   url = women[index]["url"];
+						   img = women[index]["image"];
 					
 					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
