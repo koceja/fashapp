@@ -22,54 +22,23 @@
       href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
       rel="stylesheet"
     />
+    <link href="/static/catalogs.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/5ee6ff86f6.js"></script>
 
-    <style>
-      body {
-        margin: 5% !important;
-        background-color: #f1f1f1;
-      }
-
-      #header {
-        font-family: "Sriracha", cursive;
-        text-align: center;
-        margin-bottom: 5%;
-      }
-
-      .card {
-        box-shadow: 3px 3px 8px #888888;
-      }
-      .card-body {
-        text-align: center;
-        margin: auto;
-        height: 20px;
-        margin-bottom: 1.25rem;
-      }
-
-      a:hover {
-        color: gray;
-        text-decoration: none;
-      }
-
-      a {
-        text-decoration: none;
-        color: black;
-      }
-    </style>
     <script src="/static/fadeIn.js"></script>
-    <script></script>
   </head>
   <body>
     <div id="header">
-      <h1><a href="/">fashapp</a></h1>
+      <h1><a id="headerLink" href="/">fashapp</a></h1>
       <ul>
         <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a href="/men" style="text-decoration:none;"><h3>men's</h3></a>
+            <a class="nav" href="/men" style="text-decoration:none;"><h3>men's</h3></a>
         </li>
         <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a href="/both" style="text-decoration:none;"><h3>both</h3></a>
+            <a class="nav" href="/both" style="text-decoration:none;"><h3>both</h3></a>
         </li>
         <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a href="/women" style="text-decoration:none;"><h3>women's</h3></a>
+            <a class="nav" href="/women" style="text-decoration:none;"><h3>women's</h3></a>
         </li>
     </ul>
     </div>
@@ -78,7 +47,7 @@
       style="margin: auto;"
     ></div>
 
-    <script src="/static/animateLink.js"></script>
+    <script src="/static/animateLike.js"></script>
     <script src="/static/loadMenCard.js"></script>
 
     <script>

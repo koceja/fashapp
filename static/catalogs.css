@@ -1,0 +1,49 @@
+body {
+  margin: 5% !important;
+  background-color: #f1f1f1;
+}
+
+#header {
+  font-family: "Sriracha", cursive;
+  text-align: center;
+  margin-bottom: 5%;
+  color: black;
+}
+
+#headerLink:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+#headerLink {
+  text-decoration: none;
+  color: black;
+}
+
+.card {
+  box-shadow: 3px 3px 8px #888888;
+}
+.card-body {
+  text-align: center;
+  margin: auto;
+  height: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.nav:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.nav {
+  text-decoration: none;
+  color: black;
+}
+
+.card-link {
+  color: #d8d8d8;
+}
+
+.card-link:hover {
+  color: #ff0000;
+}

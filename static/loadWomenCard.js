@@ -1229,7 +1229,7 @@ var womenJson = {
 						   url = women[Math.floor(Math.random() * women.length)]["url"];
 						   img = women[Math.floor(Math.random() * women.length)]["image"];
 				
-					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'>Like</a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
 				   }
 		   }
@@ -1244,7 +1244,7 @@ var womenJson = {
 						   url = women[Math.floor(Math.random() * women.length)]["url"];
 						   img = women[Math.floor(Math.random() * women.length)]["image"];
 					
-					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'>Like</a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
+					   $("<div class='col mb-4'><div class='card h-100'><a href='" + url + "'><img src='" + img + "' class='card-img-top' alt='...' /></a><div class='card-body'>          <a href='#' class='card-link'><i class='fa fa-heart' aria-hidden='true'></i></a>        </div>      </div></div>").hide().appendTo(".row").fadeIn();
    
 				   }
 	  }
