@@ -47,3 +47,8 @@ body {
 .card-link:hover {
   color: #ff0000;
 }
+
+img {
+  height: 300px !important;
+  object-fit: cover;
+}
