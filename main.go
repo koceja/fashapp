@@ -2,14 +2,24 @@ package main
 
 import (
 	"net/http"
+	"fmt"
+	"log"
 	"os"
+	"database/sql"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
+	_ "github.com/lib/pq"
 )
 
-func getImage(c *gin.Context) {
+	var db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"));
 
+func getImage(c *gin.Context) {
+	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (user img)"); err != nil {
+		c.String(http.StatusInternalServerError,
+			fmt.Sprintf("Error creating database table: %q", err))
+		return
+	}
 }
 
 func main() {
@@ -18,6 +28,11 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
+
+    if err != nil {
+		log.Fatalf("Error opening database: %q", err)
+	}
+	
 
 	router := gin.New()
 	router.Use(gin.Logger())
