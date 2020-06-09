@@ -12,15 +12,18 @@ import (
 	_ "github.com/lib/pq"
 )
 
-	var db, err = sql.Open("postgres", os.Getenv("DATABASE_URL"));
 
-func getImage(c *gin.Context) {
-	if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (user img)"); err != nil {
-		c.String(http.StatusInternalServerError,
-			fmt.Sprintf("Error creating database table: %q", err))
-		return
+func getImageHandler(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (user img)"); err != nil {
+			c.String(http.StatusInternalServerError,
+				fmt.Sprintf("Error creating database table: %q", err))
+			return
+		}
 	}
 }
+
+
 
 func main() {
 	port := os.Getenv("PORT")
@@ -28,6 +31,9 @@ func main() {
 	if port == "" {
 		port = "8080"
 	}
+
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"));
+
 
     if err != nil {
 		log.Fatalf("Error opening database: %q", err)
@@ -55,11 +61,13 @@ func main() {
 		c.HTML(http.StatusOK, "both.tmpl.html", nil)
 	})
 
-	router.POST("/men/", getImage)
+	router.POST("/men/", getImageHandler(db))
 
-	router.POST("/women/", getImage)
+	router.POST("/women/", getImageHandler(db))
 
-	router.POST("/both/", getImage)
+	router.POST("/both/", getImageHandler(db))
+
+	router.GET("/db/", getImageHandler(db))
 
 
 	router.Run(":" + port)
