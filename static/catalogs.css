@@ -1,13 +1,18 @@
-body {
-  margin: 5% !important;
-  background-color: #f1f1f1;
+#container {
+  margin: 10%;
+  margin-top: 5%;
 }
 
 #header {
-  font-family: "Sriracha", cursive;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   margin-bottom: 5%;
-  color: black;
+}
+
+.navbar {
+  padding-left: 10%;
+  padding-right: 10%;
+
 }
 
 #headerLink:hover {
@@ -20,14 +25,29 @@ body {
   color: black;
 }
 
+#title {
+  margin-top: 5%;
+}
+
 .card {
   box-shadow: 3px 3px 8px #888888;
+  background-color: black;
 }
 .card-body {
   text-align: center;
   margin: auto;
   height: 20px;
   margin-bottom: 1.25rem;
+}
+
+.nav-link:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
 }
 
 .nav:hover {
@@ -53,14 +73,4 @@ img {
   object-fit: cover;
 }
 
-#logout {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-}
 
-#profile {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-}

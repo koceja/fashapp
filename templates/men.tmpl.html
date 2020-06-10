@@ -18,40 +18,76 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
     <link href="/static/catalogs.css" rel="stylesheet" />
+    <link href="/static/background.css" rel="stylesheet">
+
     <script src="https://use.fontawesome.com/5ee6ff86f6.js"></script>
 
     <script src="/static/fadeIn.js"></script>
   </head>
   <body>
     <div id="header">
-      <h1><a id="headerLink" href="/home/{{.personId}}">fashapp</a></h1>
-      <ul>
-        <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a class="nav" href="/men/{{.personId}}" style="text-decoration:none;"><h3>men's</h3></a>
-        </li>
-        <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a class="nav" href="/both/{{.personId}}" style="text-decoration:none;"><h3>both</h3></a>
-        </li>
-        <li class="navLink" style="display:inline-block;  padding: 20px">
-            <a class="nav" href="/women/{{.personId}}" style="text-decoration:none;"><h3>women's</h3></a>
-        </li>
-    </ul>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/home/{{.personId}}">fashapp</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/home/{{.personId}}">home</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                styles <span class="sr-only">(current)</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item active" href="/men/{{.personId}}">men's</a>
+                <a class="dropdown-item" href="/women/{{.personId}}">women's</a>
+                <a class="dropdown-item" href="/both/{{.personId}}">both</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/profile/{{.personId}}"
+                >{{.personId}}</a
+              >
+            </li>
+          </ul>
+          <div class="nav-link-inline my-2 my-lg-0">
+            <a class="nav-link" href="/">logout</a>
+          </div>
+        </div>
+      </nav>
+      <h1 id="title">
+        men's clothing
+    </h1>
     </div>
-    <div id="logout">
-      <a href="/">Logout</a>
+    <div id="container">
+      <div
+        class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6"
+        style="margin: auto;"
+      ></div>
     </div>
-    <div id="profile">
-      <a href="/profile/{{.personId}}">{{.personId}}</a>
-    </div>
-    <div
-      class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6"
-      style="margin: auto;"
-    ></div>
 
     
 

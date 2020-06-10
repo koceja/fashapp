@@ -18,23 +18,30 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="/static/background.css" rel="stylesheet">
 
     <style>
-      body {
-        margin: 5% !important;
-        background-color: #f1f1f1;
+      #container {
+        margin: 10%;
+        margin-top: 5%;
       }
 
       #header {
-        font-family: 'Sriracha', cursive;
+        font-family: 'Roboto', sans-serif;
         text-align: center;
         margin-bottom: 5%;
       }
 
-      #both {
-          background-color: black !important;
-          color: white !important;
+      
+.navbar {
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+
+      #title {
+          margin-top: 5%;
       }
 
       .card {
@@ -46,18 +53,6 @@
           margin: auto;
           height: 20px;
           margin-bottom: 1.25rem;
-      }
-
-      #logout {
-        position: absolute;
-        top: 5%;
-        left: 5%;
-      }
-
-      #profile {
-        position: absolute;
-        top: 5%;
-        right: 5%;
       }
 
       a:hover {
@@ -83,28 +78,51 @@
   </head>
   <body>
     <div id="header">
-        <h1>{{.personId}}</h1>
-        <ul>
-          <li class="navLink" style="display:inline-block;  padding: 20px">
-              <a class="nav" href="/men/{{.personId}}" style="text-decoration:none;"><h3>men's</h3></a>
-          </li>
-          <li class="navLink" style="display:inline-block;  padding: 20px">
-              <a class="nav" href="/both/{{.personId}}" style="text-decoration:none;"><h3>both</h3></a>
-          </li>
-          <li class="navLink" style="display:inline-block;  padding: 20px">
-              <a class="nav" href="/women/{{.personId}}" style="text-decoration:none;"><h3>women's</h3></a>
-          </li>
-      </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/home/{{.personId}}">fashapp</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home/{{.personId}}">home</a>
+                  </li>
+                
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    styles
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/men/{{.personId}}">men's</a>
+                    <a class="dropdown-item" href="/women/{{.personId}}">women's</a>
+                    <a class="dropdown-item" href="/both/{{.personId}}">both</a>
+                  </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile/{{.personId}}">{{.personId}} <span class="sr-only">(current)</span></a>
+                  </li>
+              </ul>
+              <div class="nav-link-inline my-2 my-lg-0">
+                <a class="nav-link" href="/">logout</a>
+              </div>
+            </div>
+          </nav>
+          <h1 id="title">
+              {{.personId}}
+          </h1>
       </div>
-    <div id="logout">
-      <a href="/">Logout</a>
-    </div>
-    <div id="footer">
-        <hr>
-        <div>
-            <p>fashapp 2020. <a href="mailto:dkoceja@live.unc.edu">Contact us</a></p>
+      <div id="container">
+
+        <div id="footer">
+            <hr>
+            <div>
+                <p>fashapp 2020. <a href="mailto:dkoceja@live.unc.edu">Contact us</a></p>
+            </div>
         </div>
-    </div>
+      </div>
+    
     <script src="/static/animateCard.js">
     </script>
   </body>
