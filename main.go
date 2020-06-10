@@ -45,27 +45,52 @@ func main() {
 	router.LoadHTMLGlob("templates/*.tmpl.html")
 	router.Static("/static", "static")
 
+	
+
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl.html", nil)
+		c.HTML(http.StatusOK, "login.tmpl.html", nil)
 	})
 
-	router.GET("/men/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "men.tmpl.html", nil)
+	router.GET("/home/:personId", func(c *gin.Context) {
+		id := c.Param("personId")
+		c.HTML(http.StatusOK, "home.tmpl.html", gin.H{"personId": id})
 	})
 
-	router.GET("/women/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "women.tmpl.html", nil)
+	router.GET("/men/:personId", func(c *gin.Context) {
+		id := c.Param("personId")
+		c.HTML(http.StatusOK, "men.tmpl.html", gin.H{"personId": id})
 	})
 
-	router.GET("/both/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "both.tmpl.html", nil)
+	router.GET("/women/:personId", func(c *gin.Context) {
+		id := c.Param("personId")
+		c.HTML(http.StatusOK, "women.tmpl.html", gin.H{"personId": id})
 	})
 
-	router.POST("/men/", getImageHandler(db))
+	router.GET("/both/:personId", func(c *gin.Context) {
+		id := c.Param("personId")
+		c.HTML(http.StatusOK, "both.tmpl.html", gin.H{"personId": id})
+	})
 
-	router.POST("/women/", getImageHandler(db))
+	router.GET("/profile/:personId", func(c *gin.Context) {
+		id := c.Param("personId")
+		c.HTML(http.StatusOK, "profile.tmpl.html", gin.H{"personId": id})
+	})
 
-	router.POST("/both/", getImageHandler(db))
+	router.POST("/men/:personId", getImageHandler(db))
+
+	router.POST("/women/:personId", getImageHandler(db))
+
+	router.POST("/both/:personId", getImageHandler(db))
+
+	router.POST("/login", func(c *gin.Context) {
+		id := c.PostForm("personId")
+		if (id == "") {
+			c.Redirect(302, "/")
+		} else {
+			c.Redirect(302, "/home/" + id)
+		}
+	})
+
 
 	router.GET("/db/", getImageHandler(db))
 

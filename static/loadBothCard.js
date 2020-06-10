@@ -137,10 +137,6 @@ var menJson = {
 	  "url": "https://www.amazon.com/NY-Threads-Luxurious-Collar-Bathrobe/dp/B075SHYN39/ref=sr_1_26?dchild=1&keywords=men%27s+clothing&qid=1591563532&sr=8-26"
 	 },
 	 {
-	  "image": "https://m.media-amazon.com/images/I/71P8bNlFMEL._AC_UL320_.jpg",
-	  "url": "https://www.amazon.com/Protecci%C3%B3n-Polainas-Protector-Transpirable-Balaclava/dp/B07T3ZXG2H/ref=sr_1_27?dchild=1&keywords=men%27s+clothing&qid=1591563532&sr=8-27"
-	 },
-	 {
 	  "image": "https://m.media-amazon.com/images/I/511sXPews6L._AC_UL320_.jpg",
 	  "url": "https://www.amazon.com/Under-Armour-Shorts-Carbon-Heather/dp/B00KWKBEJO/ref=sr_1_28?dchild=1&keywords=men%27s+clothing&qid=1591563532&sr=8-28"
 	 },

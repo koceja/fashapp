@@ -52,3 +52,15 @@ img {
   height: 300px !important;
   object-fit: cover;
 }
+
+#logout {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
+
+#profile {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 5% !important;
+        background-color: #f1f1f1;
+      }
+
+      #header {
+        font-family: 'Sriracha', cursive;
+        text-align: center;
+        margin-bottom: 5%;
+      }
+
+      #both {
+          background-color: black !important;
+          color: white !important;
+      }
+
+      .card {
+          height: 70%;
+        box-shadow: 3px 3px 8px #888888;
+        width: 300px;
+          margin: auto;
+          margin-bottom: 100px
+      }
+      .card-body {
+        font-family: 'Sriracha', cursive;
+          text-align: center;
+          height: auto;
+          margin-bottom: 1.25rem;
+      }
+
+      #textbox {
+          text-align: center;
+      }
+
+      #submitButton {
+        border: none;
+        color: white;
+        background-color: red;
+        border-radius: 3px;
+      }
+
+      #footer {
+          text-align: center;
+      }
+
+    </style>
+    <script src="/static/fadeIn.js">
+    </script>
+  </head>
+  <body>
+      <div id="header">
+          <h1>fashapp</h1>
+      </div>
+    <div class="card">
+        <div class="card-body">
+            <h2>Username:</h2>
+            <form id="username" name="username" action="/login" method="POST">
+                <div><input id="textbox" type="text" name="personId"></div>
+                <br>
+                <div><input id="submitButton" type="submit"></div>
+            </form>
+        </div>
+        
+    </div>
+    <div id="footer">
+        <hr>
+        <div>
+            <p>fashapp 2020. <a href="mailto:dkoceja@live.unc.edu">Contact us</a></p>
+        </div>
+    </div>
+        <script src="/static/login.js">
+    </script>
+  </body>
+</html>

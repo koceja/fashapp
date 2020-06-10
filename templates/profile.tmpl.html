@@ -48,6 +48,18 @@
           margin-bottom: 1.25rem;
       }
 
+      #logout {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+      }
+
+      #profile {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+      }
+
       a:hover {
         color: gray;
         text-decoration: none;
@@ -70,14 +82,22 @@
     </script>
   </head>
   <body>
-      <div id="header">
-          <h1>fashapp</h1>
+    <div id="header">
+        <h1>{{.personId}}</h1>
+        <ul>
+          <li class="navLink" style="display:inline-block;  padding: 20px">
+              <a class="nav" href="/men/{{.personId}}" style="text-decoration:none;"><h3>men's</h3></a>
+          </li>
+          <li class="navLink" style="display:inline-block;  padding: 20px">
+              <a class="nav" href="/both/{{.personId}}" style="text-decoration:none;"><h3>both</h3></a>
+          </li>
+          <li class="navLink" style="display:inline-block;  padding: 20px">
+              <a class="nav" href="/women/{{.personId}}" style="text-decoration:none;"><h3>women's</h3></a>
+          </li>
+      </ul>
       </div>
-    <div class="row row-cols-1 row-cols-sm-3" style="margin: 0px">
-        <div class='col mb-4'><div class='card h-100'><a href="/men"><img src="/static/mens.jpg" class='card-img-top' alt='...' /></a></div></div>
-        <div class='col mb-4'><div class='card h-100'><a href="/both"><img src="/static/both.jpg" class='card-img-top' alt='...' /></a></div></div>
-        <div class='col mb-4'><div class='card h-100'><a href="/women"><img src="/static/womens.jpg" class='card-img-top' alt='...' /></a></div></div>
-
+    <div id="logout">
+      <a href="/">Logout</a>
     </div>
     <div id="footer">
         <hr>
