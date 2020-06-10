@@ -48,8 +48,13 @@ func main() {
 	
 
 	router.GET("/", func(c *gin.Context) {
+		c.Redirect(302, "/login")
+	})
+
+	router.GET("/login", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "login.tmpl.html", nil)
 	})
+
 
 	router.GET("/home/:personId", func(c *gin.Context) {
 		id := c.Param("personId")
@@ -85,7 +90,7 @@ func main() {
 	router.POST("/login", func(c *gin.Context) {
 		id := c.PostForm("personId")
 		if (id == "") {
-			c.Redirect(302, "/")
+			c.Redirect(302, "/login")
 		} else {
 			c.Redirect(302, "/home/" + id)
 		}
