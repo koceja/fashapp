@@ -15,7 +15,7 @@ import (
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (personId img)"); err != nil {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (personId string)"); err != nil {
 			c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
