@@ -48,7 +48,8 @@ func main() {
 	
 
 	router.GET("/", func(c *gin.Context) {
-		c.Redirect(302, "/login")
+		// c.Redirect(302, "/login")
+		c.HTML(http.StatusOK, "login.tmpl.html", nil)
 	})
 
 	router.GET("/login", func(c *gin.Context) {
@@ -88,12 +89,12 @@ func main() {
 	router.POST("/both/:personId", getImageHandler(db))
 
 	router.POST("/login", func(c *gin.Context) {
-		id := c.PostForm("personId")
-		if (id == "") {
-			c.Redirect(302, "/login")
-		} else {
-			c.Redirect(302, "/home/" + id)
-		}
+		// id := c.PostForm("personId")
+		// if (id == "") {
+		// 	c.Redirect(302, "/login")
+		// } else {
+		// 	c.Redirect(302, "/home/" + id)
+		// }
 	})
 
 
