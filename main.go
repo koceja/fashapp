@@ -15,7 +15,7 @@ import (
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (personId text, images text[])"); err != nil {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS likes (personId text, images text[])"); err != nil {
 			c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
@@ -23,14 +23,14 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		// personId := c.PostForm("personId")
 		// imageUrl := c.PostForm("image")
 
-		command := "INSERT INTO images VALUES (personId = " + "test" + ", images = '{}') ON CONFLICT DO NOTHING"
+		command := "INSERT INTO likes VALUES (personId = " + "test" + ", images = '{}') ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
             c.String(http.StatusInternalServerError,
                 fmt.Sprintf("Error making new row: %q", err))
             return
 		}
 		
-		// command = "SELECT images FROM images WHERE personId = $" + personId
+		// command = "SELECT images FROM likes WHERE personId = $" + personId
 		// row, err := db.Query(command)
 		// if err != nil {
         //     c.String(http.StatusInternalServerError,
@@ -43,7 +43,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		// index := len(tempArray) - 2
 		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
 
-		// command = "UPDATE images SET images = " + tempArray + " WHERE personId IS $" + personId
+		// command = "UPDATE likes SET images = " + tempArray + " WHERE personId IS $" + personId
 
 		// if _, err := db.Exec(command); err != nil {
         //     c.String(http.StatusInternalServerError,
