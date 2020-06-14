@@ -20,36 +20,36 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
 		}
-		personId := "Daniel"
-		imageUrl := "something"
+		personId := c.PostForm("personId")
+		// imageUrl := c.PostForm("image")
 
-		command := "INSERT INTO testTable VALUES ('test', '{}') ON CONFLICT DO NOTHING"
+		command := "INSERT INTO testTable VALUES ('"+personId + "', '{}') ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
             c.String(http.StatusInternalServerError,
                 fmt.Sprintf("Error making new row: %q", err))
             return
 		}
 		
-		command = "SELECT images FROM testTable WHERE personId = '" + personId + "'"
-		row, err := db.Query(command)
-		if err != nil {
-            c.String(http.StatusInternalServerError,
-                fmt.Sprintf("Error incrementing tick: %q", err))
-            return
-		}
+		// command = "SELECT images FROM testTable WHERE personId = '" + personId + "'"
+		// row, err := db.Query(command)
+		// if err != nil {
+        //     c.String(http.StatusInternalServerError,
+        //         fmt.Sprintf("Error incrementing tick: %q", err))
+        //     return
+		// }
 
-		var tempArray string
-		row.Scan(&tempArray)
-		index := len(tempArray) - 2
-		tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
+		// var tempArray string
+		// row.Scan(&tempArray)
+		// index := len(tempArray) - 2
+		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
 
-		command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
+		// command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
 
-		if _, err := db.Exec(command); err != nil {
-            c.String(http.StatusInternalServerError,
-                fmt.Sprintf("Error incrementing tick: %q", err))
-            return
-        }
+		// if _, err := db.Exec(command); err != nil {
+        //     c.String(http.StatusInternalServerError,
+        //         fmt.Sprintf("Error incrementing tick: %q", err))
+        //     return
+        // }
 	}
 }
 
