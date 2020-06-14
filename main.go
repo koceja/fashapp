@@ -136,10 +136,7 @@ func main() {
 		c.HTML(http.StatusOK, "both.tmpl.html", gin.H{"personId": id})
 	})
 
-	router.GET("/profile/:personId", func(c *gin.Context) {
-		id := c.Param("personId")
-		c.HTML(http.StatusOK, "profile.tmpl.html", gin.H{"personId": id})
-	})
+	router.GET("/profile/:personId", profileHandler(db))
 
 	router.POST("/men/:personId", getImageHandler(db))
 
