@@ -17,7 +17,7 @@ func insertImages(db *sql.DB, personId string, imageUrl string) {
 	ins := "INSERT INTO test (personId, images) VALUES ($1, $2)"
 
 	// "tags" is the list of tags, as a string slice
-	images := []string{"go", "goroutines", "queues"}
+	images := []string{}
 
 	// the pq.Array function is the secret sauce
 	if _, err := db.Exec(ins, personId, pq.Array(images)); err != nil {
@@ -37,6 +37,14 @@ func getImages(db *sql.DB, personId string) (images []string) {
     return
 }
 
+func updateImages(db *sql.DB, personId string, imageUrl string) {
+	upd := "UPDATE test SET images = array_append(images, '$1') WHERE personId = $2"
+
+	if _, err := db.Exec(upd, imageUrl, personId); err != nil {
+		log.Fatal(err)
+	}
+}
+
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -49,13 +57,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		imageUrl := c.PostForm("image")
 
 		insertImages(db, personId, imageUrl)
-		images := getImages(db, personId)
-
-		if (images[0] == "") {
-			c.String(http.StatusInternalServerError,
-				fmt.Sprintf("Error creating database table: %q", "error"))
-			return
-		}
+		updateImages(db, personId, imageUrl)
 
 		// command := "INSERT INTO testTable VALUES ('"+personId + "', '{hello}') ON CONFLICT DO NOTHING"
 		// if _, err := db.Exec(command); err != nil {
