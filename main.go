@@ -9,13 +9,38 @@ import (
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
-	_ "github.com/lib/pq"
+	"github.com/lib/pq"
+
 )
+
+func insertImages(db *sql.DB, personId string, imageUrl string) {
+	ins := "INSERT INTO test (personId, images) VALUES ($1, $2)"
+
+	// "tags" is the list of tags, as a string slice
+	images := []string{"go", "goroutines", "queues"}
+
+	// the pq.Array function is the secret sauce
+	if _, err := db.Exec(ins, personId, pq.Array(images)); err != nil {
+		log.Fatal(err)
+	}
+}
+
+func getImages(db *sql.DB, personId string) (images []string) {
+    // the select query, returning 1 column of array type
+    sel := "SELECT images FROM test WHERE personId=$1"
+
+    // wrap the output parameter in pq.Array for receiving into it
+    if err := db.QueryRow(sel, personId).Scan(pq.Array(&images)); err != nil {
+        log.Fatal(err)
+    }
+
+    return
+}
 
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS testTable (personId text, images text[])"); err != nil {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS test (personId text, images text[])"); err != nil {
 			c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
@@ -23,31 +48,40 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		personId := c.PostForm("personId")
 		imageUrl := c.PostForm("image")
 
-		command := "INSERT INTO testTable VALUES ('"+personId + "', '{hello}') ON CONFLICT DO NOTHING"
-		if _, err := db.Exec(command); err != nil {
-            c.String(http.StatusInternalServerError,
-                fmt.Sprintf("Error making new row: %q", err))
-            return
-		}
-		
-		command = "SELECT images FROM testTable WHERE personId = '" + personId + "'"
-		row, err := db.Query(command)
-		if err != nil {
-            c.String(http.StatusInternalServerError,
-				fmt.Sprintf("Error incrementing tick: %q", imageUrl))
-            return
-		}
+		insertImages(db, personId, imageUrl)
+		images := getImages(db, personId)
 
-
-		var tempArray string
-		row.Scan(&tempArray)
-		index := len(tempArray) - 2
-		if (len(tempArray) == 0) {
-			c.String(http.StatusNotImplemented,
-				fmt.Sprintf("Error incrementing tick: %q", imageUrl))
+		if (images[0] == "") {
+			c.String(http.StatusInternalServerError,
+				fmt.Sprintf("Error creating database table: %q", "error"))
 			return
 		}
-		tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
+
+		// command := "INSERT INTO testTable VALUES ('"+personId + "', '{hello}') ON CONFLICT DO NOTHING"
+		// if _, err := db.Exec(command); err != nil {
+        //     c.String(http.StatusInternalServerError,
+        //         fmt.Sprintf("Error making new row: %q", err))
+        //     return
+		// }
+		
+		// command = "SELECT images FROM testTable WHERE personId = '" + personId + "'"
+		// row, err := db.Query(command)
+		// if err != nil {
+        //     c.String(http.StatusInternalServerError,
+		// 		fmt.Sprintf("Error incrementing tick: %q", imageUrl))
+        //     return
+		// }
+
+
+		// var tempArray string
+		// row.Scan(&tempArray)
+		// index := len(tempArray) - 2
+		// if (len(tempArray) == 0) {
+		// 	c.String(http.StatusNotImplemented,
+		// 		fmt.Sprintf("Error incrementing tick: %q", imageUrl))
+		// 	return
+		// }
+		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
 
 		// command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
 
