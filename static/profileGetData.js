@@ -1,5 +1,5 @@
 $(document).ready(function() {
-        urls = $(".card-columns").html()
+        const urls = $(".card-columns").html()
         $(".card-columns").empty()
         if (urls == "") {
             return
