@@ -33,7 +33,7 @@ func getImages(db *sql.DB, personId string) (images []string) {
     if err := db.QueryRow(sel, personId).Scan(pq.Array(&images)); err != nil {
         log.Fatal(err)
     }
-
+// needed something
     return
 }
 
