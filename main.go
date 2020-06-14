@@ -15,11 +15,41 @@ import (
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (personId text, likes text[])"); err != nil {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS images (personId text, images text[])"); err != nil {
 			c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
 		}
+		personId := c.PostForm("personId")
+		imageUrl := c.PostForm("image")
+
+		command := "INSERT INTO images VALUES ($" + personId + ", '{}') ON CONFLICT DO NOTHING"
+		if _, err := db.Exec(command); err != nil {
+            c.String(http.StatusInternalServerError,
+                fmt.Sprintf("Error making new row: %q", err))
+            return
+		}
+
+		command = "SELECT images FROM images WHERE personId = $" + personId
+		row, err := db.Query(command)
+		if err != nil {
+            c.String(http.StatusInternalServerError,
+                fmt.Sprintf("Error incrementing tick: %q", err))
+            return
+		}
+
+		var tempArray string
+		row.Scan(&tempArray)
+		index := len(tempArray) - 2
+		tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
+
+		command = "UPDATE images SET images = " + tempArray + " WHERE personId IS $" + personId
+
+		if _, err := db.Exec(command); err != nil {
+            c.String(http.StatusInternalServerError,
+                fmt.Sprintf("Error incrementing tick: %q", err))
+            return
+        }
 	}
 }
 

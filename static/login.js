@@ -1,6 +1,11 @@
 function require() {
 
     var input = document.forms["username"]["personId"].value;
+    for (var i = 0; i < input.length; i++) {
+        if (input[i] == "/") {
+            return false;
+        }
+    }
     if (input == "") {
         alert("Please enter a non-empty username.");  	
         return false; 

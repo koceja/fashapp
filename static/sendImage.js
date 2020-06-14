@@ -1,17 +1,19 @@
 $(document).ready(function() {
     $(".row").on("click", "div.card-link", function() {
         const imageUrl = $(this).parent().parent().children("a").children("img").attr('src');
-        const path = window.location.pathname
-        const imgData = {image: imageUrl}
-        console.log(path);
+        var path = window.location.pathname
+        path = path.split("/")
+        const person = path[1]
+        const submitData = {personId: person, 
+                        image: imageUrl}
         var successFunc = function() {
-            console.log("success!");
+            console.log("Sent image to database");
         }
         
         $.ajax({
             type: "POST",
             url: path,
-            data: imgData,
+            data: submitData,
             success: successFunc,
       });
     });
