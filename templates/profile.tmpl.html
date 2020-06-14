@@ -117,7 +117,11 @@
 
 
         <div class="card-columns">
-          {{.images}}
+          {{ range .images }}
+          <div class='card'>
+            <img src="{{ . }}" class='card-img-top' alt='...'>
+          </div>"
+          {{ end }}
         </div>
 
         <div id="footer">
@@ -127,9 +131,7 @@
             </div>
         </div>
       </div>
-    
 
-    <script src="/static/profileGetData.js">
     </script>
   </body>
 </html>
