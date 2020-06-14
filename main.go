@@ -41,10 +41,10 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 
 		var tempArray string
 		row.Scan(&tempArray)
-		index := len(tempArray) - 2
-		tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
+		// index := len(tempArray) - 2
+		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
 
-		command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
+		// command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
 
 		// if _, err := db.Exec(command); err != nil {
         //     c.String(http.StatusInternalServerError,
