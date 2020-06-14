@@ -58,43 +58,31 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 
 		insertImages(db, personId)
 		updateImages(db, personId, imageUrl)
-
-		// command := "INSERT INTO testTable VALUES ('"+personId + "', '{hello}') ON CONFLICT DO NOTHING"
-		// if _, err := db.Exec(command); err != nil {
-        //     c.String(http.StatusInternalServerError,
-        //         fmt.Sprintf("Error making new row: %q", err))
-        //     return
-		// }
-		
-		// command = "SELECT images FROM testTable WHERE personId = '" + personId + "'"
-		// row, err := db.Query(command)
-		// if err != nil {
-        //     c.String(http.StatusInternalServerError,
-		// 		fmt.Sprintf("Error incrementing tick: %q", imageUrl))
-        //     return
-		// }
-
-
-		// var tempArray string
-		// row.Scan(&tempArray)
-		// index := len(tempArray) - 2
-		// if (len(tempArray) == 0) {
-		// 	c.String(http.StatusNotImplemented,
-		// 		fmt.Sprintf("Error incrementing tick: %q", imageUrl))
-		// 	return
-		// }
-		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
-
-		// command = "UPDATE testTable SET images = '" + tempArray + "' WHERE personId IS '" + personId + "'"
-
-		// if _, err := db.Exec(command); err != nil {
-        //     c.String(http.StatusInternalServerError,
-        //         fmt.Sprintf("Error incrementing tick: %q", err))
-        //     return
-        // }
 	}
 }
 
+func profileHandler(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS test (personId text, images text[])"); err != nil {
+			c.String(http.StatusInternalServerError,
+				fmt.Sprintf("Error creating database table: %q", err))
+			return
+		}
+		id := c.Param("personId")
+
+		images := getImages(db, id)
+
+		var temp string
+
+		if len(images) > 0 {
+			temp = images[0]
+		} else {
+			temp = "empty"
+		}
+
+		c.HTML(http.StatusOK, "profile.tmpl.html", gin.H{"personId": id, "images": temp})
+	}
+}
 
 
 func main() {
