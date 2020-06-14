@@ -5,6 +5,8 @@ $(document).ready(function() {
         path = path.split("/")
         const person = path[2]
         console.log(person)
+        console.log(imageUrl)
+
         const submitData = {personId: person, 
                         image: imageUrl}
         var successFunc = function() {

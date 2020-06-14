@@ -13,7 +13,7 @@ import (
 
 )
 
-func insertImages(db *sql.DB, personId string, imageUrl string) {
+func insertImages(db *sql.DB, personId string) {
 	ins := "INSERT INTO test (personId, images) VALUES ($1, $2)"
 
 	// "tags" is the list of tags, as a string slice
@@ -38,7 +38,7 @@ func getImages(db *sql.DB, personId string) (images []string) {
 }
 
 func updateImages(db *sql.DB, personId string, imageUrl string) {
-	upd := "UPDATE test SET images = array_append(images, '$1') WHERE personId = $2"
+	upd := "UPDATE test SET images = array_append(images, $1) WHERE personId = $2"
 
 	if _, err := db.Exec(upd, imageUrl, personId); err != nil {
 		log.Fatal(err)
@@ -56,7 +56,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		personId := c.PostForm("personId")
 		imageUrl := c.PostForm("image")
 
-		insertImages(db, personId, imageUrl)
+		insertImages(db, personId)
 		updateImages(db, personId, imageUrl)
 
 		// command := "INSERT INTO testTable VALUES ('"+personId + "', '{hello}') ON CONFLICT DO NOTHING"
