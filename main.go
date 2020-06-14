@@ -29,27 +29,27 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
                 fmt.Sprintf("Error making new row: %q", err))
             return
 		}
+		
+		// command = "SELECT images FROM images WHERE personId = $" + personId
+		// row, err := db.Query(command)
+		// if err != nil {
+        //     c.String(http.StatusInternalServerError,
+        //         fmt.Sprintf("Error incrementing tick: %q", err))
+        //     return
+		// }
 
-		command = "SELECT images FROM images WHERE personId = $" + personId
-		row, err := db.Query(command)
-		if err != nil {
-            c.String(http.StatusInternalServerError,
-                fmt.Sprintf("Error incrementing tick: %q", err))
-            return
-		}
+		// var tempArray string
+		// row.Scan(&tempArray)
+		// index := len(tempArray) - 2
+		// tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
 
-		var tempArray string
-		row.Scan(&tempArray)
-		index := len(tempArray) - 2
-		tempArray = tempArray[:index] + "," + imageUrl + tempArray[index:]
+		// command = "UPDATE images SET images = " + tempArray + " WHERE personId IS $" + personId
 
-		command = "UPDATE images SET images = " + tempArray + " WHERE personId IS $" + personId
-
-		if _, err := db.Exec(command); err != nil {
-            c.String(http.StatusInternalServerError,
-                fmt.Sprintf("Error incrementing tick: %q", err))
-            return
-        }
+		// if _, err := db.Exec(command); err != nil {
+        //     c.String(http.StatusInternalServerError,
+        //         fmt.Sprintf("Error incrementing tick: %q", err))
+        //     return
+        // }
 	}
 }
 
