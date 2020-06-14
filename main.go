@@ -15,7 +15,7 @@ import (
 
 func getImageHandler(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
-		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS likes (personId text, images text[])"); err != nil {
+		if _, err := db.Exec("CREATE TABLE IF NOT EXISTS testTable (personId text, images text[])"); err != nil {
 			c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
@@ -23,7 +23,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		// personId := c.PostForm("personId")
 		// imageUrl := c.PostForm("image")
 
-		command := "INSERT INTO likes VALUES (personId = " + "test" + ", images = '{}') ON CONFLICT DO NOTHING"
+		command := "INSERT INTO testTable VALUES ('test', '{}') ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
             c.String(http.StatusInternalServerError,
                 fmt.Sprintf("Error making new row: %q", err))
