@@ -42,7 +42,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		var tempArray string
 		row.Scan(&tempArray)
 		index := len(tempArray) - 2
-		if (index < 0) {
+		if (len(tempArray) == 0) {
 			c.String(http.StatusNotImplemented,
 				fmt.Sprintf("Error incrementing tick: %q", imageUrl))
 			return
