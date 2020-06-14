@@ -3,7 +3,8 @@ $(document).ready(function() {
         const imageUrl = $(this).parent().parent().children("a").children("img").attr('src');
         var path = window.location.pathname
         path = path.split("/")
-        const person = path[1]
+        const person = path[2]
+        console.log(person)
         const submitData = {personId: person, 
                         image: imageUrl}
         var successFunc = function() {
