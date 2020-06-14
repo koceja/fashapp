@@ -23,7 +23,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		// personId := c.PostForm("personId")
 		// imageUrl := c.PostForm("image")
 
-		command := "INSERT INTO images VALUES (" + "test" + ", '{}') ON CONFLICT DO NOTHING"
+		command := "INSERT INTO images VALUES (personId = " + "test" + ", image = {}) ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
             c.String(http.StatusInternalServerError,
                 fmt.Sprintf("Error making new row: %q", err))
