@@ -20,8 +20,8 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 				fmt.Sprintf("Error creating database table: %q", err))
 			return
 		}
-		personId := c.PostForm("personId")
-		imageUrl := c.PostForm("image")
+		personId := "Daniel"
+		imageUrl := "something"
 
 		command := "INSERT INTO testTable VALUES ('test', '{}') ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
