@@ -74,13 +74,20 @@ func profileHandler(db *sql.DB) gin.HandlerFunc {
 		var temp string
 
 		if len(images) > 0 {
-			temp = images[0]
+			temp = createCards(images)
 		} else {
 			temp = "empty"
 		}
 
 		c.HTML(http.StatusOK, "profile.tmpl.html", gin.H{"personId": id, "images": temp})
 	}
+}
+
+func createCards(images []string) (cards string) {
+	for i := 0; i < len(images); i++ {
+		cards = cards + "<div class='card'><img src='" + images[i] + "' class='card-img-top' alt='...'></div>"
+	}
+	return	
 }
 
 func loginHandler(db *sql.DB) gin.HandlerFunc {
