@@ -35,7 +35,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		if err != nil {
             c.String(http.StatusInternalServerError,
 				fmt.Sprintf("Error incrementing tick: %q", err))
-				fmt.Sprintf("Error incrementing tick: %q", row))
+				fmt.Sprintf("Error incrementing tick: %q", row)
             return
 		}
 
