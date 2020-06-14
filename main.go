@@ -13,7 +13,7 @@ import (
 
 )
 
-func insertImages(db *sql.DB, personId string) {
+func insertId(db *sql.DB, personId string) {
 	ins := "INSERT INTO test (personId, images) VALUES ($1, $2)"
 
 	// "tags" is the list of tags, as a string slice
@@ -56,7 +56,6 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 		personId := c.PostForm("personId")
 		imageUrl := c.PostForm("image")
 
-		insertImages(db, personId)
 		updateImages(db, personId, imageUrl)
 	}
 }
@@ -81,6 +80,25 @@ func profileHandler(db *sql.DB) gin.HandlerFunc {
 		}
 
 		c.HTML(http.StatusOK, "profile.tmpl.html", gin.H{"personId": id, "images": temp})
+	}
+}
+
+func loginHandler(db *sql.DB) gin.HandlerFunc {
+	return func(c *gin.Context) {
+		
+		id := c.PostForm("personId")
+
+		if (id == "") {
+			c.Redirect(302, "/login")
+		} else {
+			if _, err := db.Exec("CREATE TABLE IF NOT EXISTS test (personId text, images text[])"); err != nil {
+				c.String(http.StatusInternalServerError,
+					fmt.Sprintf("Error creating database table: %q", err))
+				return
+			}
+			insertId(db, id)
+			c.Redirect(302, "/home/" + id)
+		}
 	}
 }
 
@@ -144,18 +162,7 @@ func main() {
 
 	router.POST("/both/:personId", getImageHandler(db))
 
-	router.POST("/login", func(c *gin.Context) {
-		id := c.PostForm("personId")
-		if (id == "") {
-			c.Redirect(302, "/login")
-		} else {
-			c.Redirect(302, "/home/" + id)
-		}
-	})
-
-
-	router.GET("/db/", getImageHandler(db))
-
+	router.POST("/login", loginHandler(db))
 
 	router.Run(":" + port)
 }
