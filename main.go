@@ -21,7 +21,7 @@ func getImageHandler(db *sql.DB) gin.HandlerFunc {
 			return
 		}
 		personId := c.PostForm("personId")
-		imageUrl := c.PostForm("image")
+		// imageUrl := c.PostForm("image")
 
 		command := "INSERT INTO images VALUES ($" + personId + ", '{}') ON CONFLICT DO NOTHING"
 		if _, err := db.Exec(command); err != nil {
