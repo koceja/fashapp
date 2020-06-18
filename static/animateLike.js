@@ -5,7 +5,7 @@
     
    $(".row").on("click", "div.card-link", function() {
     $(this).css("color", "red");
-    $(this).animate({marginBottom: "1.35rem"}, 200);
-    $(this).animate({marginBottom: "1.35rem"}, 200);
+    $(this).parent().animate({marginBottom: "1.35rem", padding: "1.15rem"}, 200);
+    $(this).parent().animate({marginBottom: "1.25rem", padding: "1.25rem"}, 200);
 
 });
